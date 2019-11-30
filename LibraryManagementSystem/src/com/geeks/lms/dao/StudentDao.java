@@ -5,9 +5,9 @@ import com.geeks.lms.beans.StudentBean;
 
 public interface StudentDao {
 
-	public int addStudentDetails(StudentBean studentBean);
-	public int updateStudentDetails(StudentBean studentBean);
-	public int deleteStudentDetails(StudentBean studentBean);
-	public StudentBean getStudentDetailsById(Integer studentId);
-	public List<StudentBean> getAllStudentDetails();
+	public int addStudent(StudentBean studentBean);
+	public int updateStudent(StudentBean studentBean);
+	public int deleteStudent(StudentBean studentBean);
+	public StudentBean getStudentById(Integer studentId);
+	public List<StudentBean> getAllStudents();
 }

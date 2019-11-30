@@ -1,9 +1,9 @@
 package com.geeks.lms.beans;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
-public class StudentDetailsBean implements Serializable {
+public class StudentBean implements Serializable {
 
 	/**
 	 * 
@@ -14,13 +14,12 @@ public class StudentDetailsBean implements Serializable {
 	private String gender; 
 	private Date dateOfBirth; 
 	private int issueId;
-	private String department; 
+	private int departmentId; 
 	private String email; 
 	private int contactNo; 
 	private int cnic;
 	private String address; 
 	private String rollNo; 
-	private DepartmentBean departmentBean;
 	
 	public int getStudentId() {
 		return studentId;
@@ -52,12 +51,7 @@ public class StudentDetailsBean implements Serializable {
 	public void setIssueId(int issueId) {
 		this.issueId = issueId;
 	}
-	public String getDepartment() {
-		return department;
-	}
-	public void setDepartment(String department) {
-		this.department = department;
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -88,11 +82,11 @@ public class StudentDetailsBean implements Serializable {
 	public void setRollNo(String rollNo) {
 		this.rollNo = rollNo;
 	}
-	public DepartmentBean getDepartmentBean() {
-		return departmentBean;
+	public int getDepartmentId() {
+		return departmentId;
 	}
-	public void setDepartmentBean(DepartmentBean departmentBean) {
-		this.departmentBean = departmentBean;
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
-	
+
 }
