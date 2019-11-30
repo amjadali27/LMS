@@ -1,8 +1,15 @@
 package com.geeks.lms.beans;
 
-public class DepartmentBean {
+import java.io.Serializable;
+
+public class DepartmentBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int departmentId;
 	private String departmentName;
+	
 	public int getDepartmentId() {
 		return departmentId;
 	}

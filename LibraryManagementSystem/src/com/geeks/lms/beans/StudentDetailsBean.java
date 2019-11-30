@@ -1,9 +1,14 @@
 package com.geeks.lms.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class StudentDetailsBean {
+public class StudentDetailsBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int studentId;
 	private String studentName; 
 	private String gender; 

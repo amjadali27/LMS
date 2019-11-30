@@ -8,6 +8,6 @@ public interface DepartmentDao {
 	public int addDepartment(DepartmentBean departmentBean);
 	public int updateDepartment(DepartmentBean departmentBean);
 	public int deleteDepartment(DepartmentBean departmentBean);
-	public DepartmentDao getDepartmentById(Integer departmentId);
+	public DepartmentBean getDepartmentById(Integer departmentId);
 	public List<DepartmentBean> getAllDepartments();
 }
