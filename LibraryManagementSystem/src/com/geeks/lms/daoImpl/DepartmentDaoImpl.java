@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.geeks.lms.beans.DepartmentBean;
@@ -59,11 +60,12 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Override
 	public DepartmentBean getDepartmentById(Integer departmentId) {
+		ResultSet rst = null;
 		DepartmentBean departmentBean = null;
 		try {
 			pst = con.prepareStatement("Select * from department where department_id=?");
 			pst.setInt(1, departmentId);
-			ResultSet rst = pst.executeQuery();
+			rst = pst.executeQuery();
 			while(rst.next())
 			{
 				departmentBean = new DepartmentBean();
@@ -80,8 +82,25 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Override
 	public List<DepartmentBean> getAllDepartments() {
-		// TODO Auto-generated method stub
-		return null;
+		List departments = new ArrayList<DepartmentBean>();
+		DepartmentBean departmentBean = null;
+		ResultSet rst = null;
+		try {
+			pst = con.prepareStatement("Select * from department where active = 1");
+			rst = pst.executeQuery();
+			while (rst.next())
+			{
+				departmentBean = new DepartmentBean();
+				departmentBean.setDepartmentId(rst.getInt("department_id"));
+				departmentBean.setDepartmentName(rst.getString("dname"));
+				departments.add(departmentBean);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return departments;
 	}
 
 }
