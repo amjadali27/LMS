@@ -4,7 +4,19 @@ import java.util.Date;
 
 public class StudentDetailsBean {
 
-	private int studentId; 
+	private int studentId;
+	private String studentName; 
+	private String gender; 
+	private Date dateOfBirth; 
+	private int issueId;
+	private String department; 
+	private String email; 
+	private int contactNo; 
+	private int cnic;
+	private String address; 
+	private String rollNo; 
+	private DepartmentBean departmentBean;
+	
 	public int getStudentId() {
 		return studentId;
 	}
@@ -77,15 +89,5 @@ public class StudentDetailsBean {
 	public void setDepartmentBean(DepartmentBean departmentBean) {
 		this.departmentBean = departmentBean;
 	}
-	private String studentName; 
-	private String gender; 
-	private Date dateOfBirth; 
-	private int issueId;
-	private String department; 
-	private String email; 
-	private int contactNo; 
-	private int cnic;
-	private String address; 
-	private String rollNo; 
-	private DepartmentBean departmentBean;
+	
 }
